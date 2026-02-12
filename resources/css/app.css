@@ -1,0 +1,605 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ===================================
+   EXCHANGE - Design System
+   =================================== */
+
+:root {
+    /* Primary Colors - Deep Blue */
+    --primary-50: #eff6ff;
+    --primary-100: #dbeafe;
+    --primary-200: #bfdbfe;
+    --primary-300: #93c5fd;
+    --primary-400: #60a5fa;
+    --primary-500: #3b82f6;
+    --primary-600: #2563eb;
+    --primary-700: #1d4ed8;
+    --primary-800: #1e3a5f;
+    --primary-900: #0f172a;
+
+    /* Accent Colors - Emerald */
+    --accent-400: #34d399;
+    --accent-500: #10b981;
+    --accent-600: #059669;
+
+    /* Danger */
+    --danger-500: #ef4444;
+}
+
+/* ===================================
+   BASE LAYER
+   =================================== */
+@layer base {
+    html {
+        font-family: 'Inter', system-ui, sans-serif;
+        scroll-behavior: smooth;
+    }
+
+    body {
+        @apply bg-[#0a1628] text-slate-200 antialiased;
+    }
+
+    /* Typography */
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        @apply font-bold text-white;
+    }
+
+    h1 {
+        @apply text-3xl lg:text-4xl;
+    }
+
+    h2 {
+        @apply text-2xl lg:text-3xl;
+    }
+
+    h3 {
+        @apply text-xl lg:text-2xl;
+    }
+
+    h4 {
+        @apply text-lg lg:text-xl;
+    }
+}
+
+/* ===================================
+   COMPONENT LAYER
+   =================================== */
+@layer components {
+
+    /* Container */
+    .container-exchange {
+        @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+    }
+
+    /* Buttons */
+    .btn {
+        @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold rounded-lg transition-all duration-200;
+        @apply focus:outline-none focus:ring-2 focus:ring-offset-2;
+    }
+
+    .btn-primary {
+        @apply bg-primary-600 text-white hover:bg-primary-700;
+        @apply focus:ring-primary-500;
+    }
+
+    .btn-accent {
+        @apply bg-accent-500 text-white hover:bg-accent-600;
+        @apply focus:ring-accent-500;
+    }
+
+    .btn-outline {
+        @apply border-2 bg-transparent;
+    }
+
+    .btn-outline-primary {
+        @apply btn-outline border-primary-600 text-primary-600 hover:bg-primary-600 hover:text-white;
+    }
+
+    /* Cards */
+    .card {
+        @apply bg-white rounded-xl shadow-sm border border-slate-200;
+    }
+
+    .card-hover {
+        @apply card hover:shadow-lg hover:border-slate-300 transition-all duration-200;
+    }
+
+    /* Form Inputs */
+    .input {
+        @apply w-full px-4 py-3 rounded-lg border border-slate-300;
+        @apply focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-primary-500;
+        @apply transition-colors;
+    }
+
+    .input-error {
+        @apply border-red-500 focus:ring-red-500 focus:border-red-500;
+    }
+
+    /* Badges */
+    .badge {
+        @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+    }
+
+    .badge-success {
+        @apply bg-green-100 text-green-800;
+    }
+
+    .badge-danger {
+        @apply bg-red-100 text-red-800;
+    }
+
+    .badge-warning {
+        @apply bg-yellow-100 text-yellow-800;
+    }
+
+    .badge-info {
+        @apply bg-blue-100 text-blue-800;
+    }
+
+    /* Price Change Indicators */
+    .price-up {
+        @apply text-green-600;
+    }
+
+    .price-down {
+        @apply text-red-600;
+    }
+
+    .price-neutral {
+        @apply text-slate-500;
+    }
+}
+
+/* ===================================
+   TICKER STYLES
+   =================================== */
+.quotes-ticker {
+    @apply bg-primary-900 text-white py-2 overflow-hidden;
+}
+
+.ticker-track {
+    @apply flex gap-8;
+    animation: ticker 60s linear infinite;
+}
+
+.ticker-item {
+    @apply flex items-center gap-3 whitespace-nowrap;
+}
+
+.ticker-code {
+    @apply font-mono font-bold text-accent-400;
+}
+
+.ticker-price {
+    @apply font-mono;
+}
+
+.ticker-change {
+    @apply text-sm flex items-center gap-1;
+}
+
+.ticker-change.up {
+    @apply text-green-400;
+}
+
+.ticker-change.down {
+    @apply text-red-400;
+}
+
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.quotes-ticker:hover .ticker-track {
+    animation-play-state: paused;
+}
+
+/* ===================================
+   HERO SECTION
+   =================================== */
+.hero-section {
+    @apply relative overflow-hidden;
+    background: linear-gradient(135deg, var(--primary-900) 0%, var(--primary-800) 50%, var(--primary-900) 100%);
+}
+
+.hero-finance-bg {
+    @apply absolute inset-0 pointer-events-none;
+}
+
+/* Floating Tickers Animation */
+.price-ticker {
+    animation: float 6s ease-in-out infinite;
+}
+
+.price-ticker:nth-child(2) {
+    animation-delay: 1s;
+}
+
+.price-ticker:nth-child(3) {
+    animation-delay: 2s;
+}
+
+.price-ticker:nth-child(4) {
+    animation-delay: 3s;
+}
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-float {
+    animation: float 6s ease-in-out infinite;
+}
+
+/* Ticker Animation */
+@keyframes ticker {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-50%);
+    }
+}
+
+.animate-ticker {
+    animation: ticker 30s linear infinite;
+}
+
+.quotes-ticker:hover .animate-ticker {
+    animation-play-state: paused;
+}
+
+/* Wave Animation */
+@keyframes wave {
+
+    0%,
+    100% {
+        d: path("M0,50 Q360,100 720,50 T1440,50");
+    }
+
+    50% {
+        d: path("M0,50 Q360,0 720,50 T1440,50");
+    }
+}
+
+.animate-wave {
+    animation: wave 4s ease-in-out infinite;
+}
+
+/* FadeIn Up Animation */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.6s ease-out forwards;
+    opacity: 0;
+}
+
+/* Chart Line Animation */
+@keyframes drawLine {
+    from {
+        stroke-dashoffset: 1000;
+    }
+
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+.chart-line {
+    stroke-dasharray: 1000;
+    animation: drawLine 2s ease-out forwards;
+}
+
+
+
+.animate-float {
+    animation: float 4s ease-in-out infinite;
+}
+
+/* Chart Line Animation */
+.chart-line {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: drawLine 3s ease-out forwards;
+}
+
+@keyframes drawLine {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
+/* Candlestick Animation */
+.candle {
+    animation: candleGrow 1s ease-out forwards;
+    transform-origin: bottom;
+}
+
+.candle:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.candle:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.candle:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.candle:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.candle:nth-child(5) {
+    animation-delay: 0.5s;
+}
+
+.candle:nth-child(6) {
+    animation-delay: 0.6s;
+}
+
+.candle:nth-child(7) {
+    animation-delay: 0.7s;
+}
+
+.candle:nth-child(8) {
+    animation-delay: 0.8s;
+}
+
+@keyframes candleGrow {
+    from {
+        transform: scaleY(0);
+        opacity: 0;
+    }
+
+    to {
+        transform: scaleY(1);
+        opacity: 1;
+    }
+}
+
+/* ===================================
+   COMMODITY CARDS
+   =================================== */
+.commodity-slide {
+    @apply transition-transform duration-500;
+}
+
+.commodity-carousel {
+    @apply relative;
+}
+
+/* ===================================
+   STATS COUNTER
+   =================================== */
+.stat-item {
+    @apply transition-all duration-300;
+}
+
+.stat-item:hover {
+    @apply transform scale-105;
+}
+
+/* ===================================
+   RESPONSIVE UTILITIES
+   =================================== */
+@media (max-width: 768px) {
+    .hero-section {
+        @apply py-8;
+    }
+
+    .floating-tickers {
+        display: none;
+    }
+}
+
+/* ===================================
+   PRINT STYLES
+   =================================== */
+@media print {
+
+    .quotes-ticker,
+    .accessibility-panel,
+    header nav,
+    footer {
+        display: none !important;
+    }
+
+    body {
+        font-size: 12pt;
+        color: #000;
+        background: #fff;
+    }
+}
+
+/* ===================================
+   FOCUS VISIBLE
+   =================================== */
+:focus-visible {
+    outline: 2px solid var(--accent-500);
+    outline-offset: 2px;
+}
+
+/* Skip Link */
+.sr-only:focus {
+    @apply not-sr-only;
+}
+
+/* ===================================
+   GOST ACCESSIBILITY (ГОСТ Р 52872-2019)
+   =================================== */
+
+/* Font Sizes */
+.a11y-font-normal {
+    font-size: 16px !important;
+}
+
+.a11y-font-large {
+    font-size: 20px !important;
+}
+
+.a11y-font-large * {
+    font-size: inherit !important;
+}
+
+.a11y-font-xlarge {
+    font-size: 24px !important;
+}
+
+.a11y-font-xlarge * {
+    font-size: inherit !important;
+}
+
+/* Color Schemes */
+.a11y-scheme-normal {
+    /* Default theme - no changes */
+}
+
+/* Black on White */
+.a11y-scheme-bw,
+.a11y-scheme-bw * {
+    background-color: #ffffff !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.a11y-scheme-bw a {
+    color: #0000ff !important;
+    text-decoration: underline !important;
+}
+
+/* White on Black */
+.a11y-scheme-wb,
+.a11y-scheme-wb * {
+    background-color: #000000 !important;
+    color: #ffffff !important;
+    border-color: #ffffff !important;
+}
+
+.a11y-scheme-wb a {
+    color: #00ffff !important;
+    text-decoration: underline !important;
+}
+
+/* Yellow on Black */
+.a11y-scheme-yb,
+.a11y-scheme-yb * {
+    background-color: #000000 !important;
+    color: #ffff00 !important;
+    border-color: #ffff00 !important;
+}
+
+.a11y-scheme-yb a {
+    color: #00ff00 !important;
+    text-decoration: underline !important;
+}
+
+/* Black on Yellow */
+.a11y-scheme-by,
+.a11y-scheme-by * {
+    background-color: #ffff00 !important;
+    color: #000000 !important;
+    border-color: #000000 !important;
+}
+
+.a11y-scheme-by a {
+    color: #0000ff !important;
+    text-decoration: underline !important;
+}
+
+/* Letter Spacing */
+.a11y-letter-spacing,
+.a11y-letter-spacing * {
+    letter-spacing: 0.12em !important;
+    word-spacing: 0.16em !important;
+}
+
+/* Line Height */
+.a11y-line-height,
+.a11y-line-height * {
+    line-height: 1.8 !important;
+}
+
+/* No Images - исключаем иконки в topbar и навигации */
+.a11y-no-images img:not([class*="icon"]),
+.a11y-no-images .hero-section img,
+.a11y-no-images .commodities-section img,
+.a11y-no-images .news-section img,
+.a11y-no-images video {
+    visibility: hidden !important;
+}
+
+/* Preserve topbar and navigation icons */
+.a11y-scheme-bw svg,
+.a11y-scheme-wb svg,
+.a11y-scheme-yb svg,
+.a11y-scheme-by svg {
+    color: currentColor !important;
+    fill: currentColor !important;
+    stroke: currentColor !important;
+}
+
+/* Preserve button and link styles in accessibility panels */
+.a11y-scheme-bw [class*="topbar"] *,
+.a11y-scheme-wb [class*="topbar"] *,
+.a11y-scheme-yb [class*="topbar"] *,
+.a11y-scheme-by [class*="topbar"] * {
+    background-color: inherit;
+}
+
+/* ===================================
+   PROSE OVERRIDES (FIX FOR INLINE STYLES)
+   =================================== */
+.prose.prose-invert {
+    color: theme('colors.slate.200') !important;
+}
+
+.prose.prose-invert :not(a):not(code):not(h1):not(h2):not(h3):not(h4):not(h5):not(h6) {
+    color: inherit !important;
+}
+
+.prose.prose-invert h1,
+.prose.prose-invert h2,
+.prose.prose-invert h3,
+.prose.prose-invert h4,
+.prose.prose-invert h5,
+.prose.prose-invert h6 {
+    color: theme('colors.white') !important;
+}
+
+.prose.prose-invert strong {
+    color: theme('colors.white') !important;
+}
