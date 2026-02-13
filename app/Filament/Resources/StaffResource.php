@@ -88,6 +88,7 @@ class StaffResource extends Resource
                         FileUpload::make('photo')
                             ->label('Фотография')
                             ->image()
+                            ->disk('cloudinary')
                             ->directory('staff-photos')
                             ->avatar()
                             ->imageEditor(),
@@ -118,7 +119,8 @@ class StaffResource extends Resource
             ->columns([
                 ImageColumn::make('photo')
                     ->label('Фото')
-                    ->circular(),
+                    ->circular()
+                    ->url(fn($record) => $record->photo),
 
                 Columns\TextColumn::make('name')
                     ->label('ФИО')
