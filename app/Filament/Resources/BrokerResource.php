@@ -126,7 +126,9 @@ class BrokerResource extends Resource
                         Components\FileUpload::make('logo')
                             ->label('Логотип')
                             ->image()
-                            ->directory('brokers'),
+                            ->disk('cloudinary')
+                            ->directory('brokers')
+                            ->visibility('public'),
 
                         Components\TextInput::make('rating')
                             ->label('Рейтинг (1-5)')
@@ -168,7 +170,8 @@ class BrokerResource extends Resource
             ->columns([
                 ImageColumn::make('logo')
                     ->label('Лого')
-                    ->circular(),
+                    ->circular()
+                    ->url(fn($record) => $record->logo),
 
                 TextColumn::make('name')
                     ->label('Название')
