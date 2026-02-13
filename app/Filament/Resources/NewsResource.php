@@ -109,6 +109,8 @@ class NewsResource extends Resource
                         Components\FileUpload::make('image')
                             ->label('Изображение')
                             ->image()
+                            ->disk('cloudinary')
+                            ->visibility('public')
                             ->directory('news')
                             ->imageResizeMode('cover')
                             ->imageCropAspectRatio('16:9'),
@@ -141,7 +143,8 @@ class NewsResource extends Resource
             ->columns([
                 ImageColumn::make('image')
                     ->label('Фото')
-                    ->circular(),
+                    ->circular()
+                    ->url(fn($record) => $record->image),
 
                 TextColumn::make('title')
                     ->label('Заголовок')
