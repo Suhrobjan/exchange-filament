@@ -112,6 +112,8 @@ class RegionalOfficeResource extends Resource
                         Components\FileUpload::make('manager_photo')
                             ->label('Фото руководителя')
                             ->image()
+                            ->disk('cloudinary')
+                            ->visibility('public')
                             ->directory('managers')
                             ->avatar(),
                     ])
