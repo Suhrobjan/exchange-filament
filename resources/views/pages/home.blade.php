@@ -1,4 +1,4 @@
-<x-app title="Главная — УЗЕКС">
+<x-app title="Главная — RUAPB">
     {{-- Hero Section --}}
     @include('pages.home.hero')
 

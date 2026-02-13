@@ -54,19 +54,17 @@ class TranslationResource extends Resource
     {
         return $form
             ->components([
-                Layout\Split::make([
-                    Layout\Section::make([
-                        Components\TextInput::make('group')
-                            ->label('Группа')
-                            ->required()
-                            ->placeholder('header, footer, home, common, pages'),
+                Layout\Section::make([
+                    Components\TextInput::make('group')
+                        ->label('Группа')
+                        ->required()
+                        ->placeholder('header, footer, home, common, pages'),
 
-                        Components\TextInput::make('key')
-                            ->label('Ключ')
-                            ->required()
-                            ->unique(ignoreRecord: true)
-                            ->placeholder('home.popular_commodities'),
-                    ]),
+                    Components\TextInput::make('key')
+                        ->label('Ключ')
+                        ->required()
+                        ->unique(ignoreRecord: true)
+                        ->placeholder('home.popular_commodities'),
                 ]),
 
                 Layout\Section::make('Переводы')

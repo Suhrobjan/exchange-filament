@@ -28,6 +28,21 @@ if (!function_exists('t')) {
             return $translations[$key][$locale];
         }
 
+        // Self-Healing: If key doesn't exist in any locale, create it
+        if (!isset($translations[$key])) {
+            $parts = explode('.', $key);
+            $group = count($parts) > 1 ? $parts[0] : 'common';
+
+            // Create in DB
+            Translation::updateOrCreate(
+                ['key' => $key],
+                ['group' => $group, 'text' => ['uz' => $fallback ?: $key, 'ru' => '', 'en' => '']]
+            );
+
+            // Clear cache to pick up new key next time
+            Cache::forget('translations');
+        }
+
         // Fallback chain: current locale → uz → ru → en → fallback string
         foreach (['uz', 'ru', 'en'] as $fb) {
             if (isset($translations[$key][$fb]) && $translations[$key][$fb] !== '') {
