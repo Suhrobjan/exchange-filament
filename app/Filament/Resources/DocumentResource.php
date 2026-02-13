@@ -113,7 +113,9 @@ class DocumentResource extends Resource
 
                         Components\FileUpload::make('file_path')
                             ->label('Файл')
+                            ->disk('cloudinary')
                             ->directory('documents')
+                            ->visibility('public')
                             ->acceptedFileTypes(['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']),
 
                         Components\Toggle::make('is_published')
@@ -152,6 +154,12 @@ class DocumentResource extends Resource
                         'audit_report' => 'Аудит',
                         default => $state,
                     }),
+
+                TextColumn::make('file_path')
+                    ->label('Файл')
+                    ->url(fn($record) => $record->file_path)
+                    ->openUrlInNewTab()
+                    ->formatStateUsing(fn() => 'Скачать'),
 
                 TextColumn::make('updated_at')
                     ->label('Обновлено')
