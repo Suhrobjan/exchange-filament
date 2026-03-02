@@ -1,0 +1,177 @@
+[33mcommit 5d48a992c06e0d9850ee2b9487f6b5b41d93ba78[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Mon Mar 2 11:13:25 2026 +0500
+
+    Fix: use stable faker in Laravel 12
+
+[33mcommit b9287cd90e5d9bdfe0b58fb7c4130e709ac7986c[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Mon Mar 2 11:04:32 2026 +0500
+
+    Fix: replace fake() with ->faker in factories
+
+[33mcommit 19c6c7f0279f726087e2d81c63da93248f826219[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Mon Mar 2 10:54:33 2026 +0500
+
+    Fix: sync composer.lock with spatie medialibrary
+
+[33mcommit 06c9216bd731f6e45be3e676d78395a985f4e322[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 23:25:07 2026 +0500
+
+    railway deploy fix
+
+[33mcommit 6070facc3d3320bc3f0375b1132cbd86af8c1757[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:59:41 2026 +0500
+
+    fix cloudinary cloud config
+
+[33mcommit 10e80965055855168fbcd146e4e492f2226d188b[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:42:13 2026 +0500
+
+    fix cloudinary env keys
+
+[33mcommit 77cef36227a28bfc187f6808aaf944ee21a3155d[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:32:20 2026 +0500
+
+    add cloudinary disk
+
+[33mcommit baa707567c51dcb19150f3909c773b8900d23b2f[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:25:28 2026 +0500
+
+    use regional office for images
+
+[33mcommit 0d5699499095720bbd19a43b631f13a684927fae[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:22:02 2026 +0500
+
+    use cloudinary for news images
+
+[33mcommit 6c72be234af14e239a8388d41b48b91e84d04abe[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:18:56 2026 +0500
+
+    use cloudinary for documents upload
+
+[33mcommit 014d4a7a3899afd56ddfc08839d31e236baa1f0c[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:14:13 2026 +0500
+
+    use cloudinary for broker logos
+
+[33mcommit e1b57c4031e478c49b696caa28b67cf2a4f6fdcd[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 11:02:19 2026 +0500
+
+    use cloudinary for staff photos
+
+[33mcommit 6e6d88f6fe2a8345531940328814a0ffec10f6b2[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 10:50:13 2026 +0500
+
+    install cloudinary
+
+[33mcommit c022e9b2785135d9d11461ff74ad7b6eb9290520[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 10:12:06 2026 +0500
+
+    force heroku redeploy
+
+[33mcommit 1c3f75458633f956f694304cc0a0f72312bdd735[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 10:09:08 2026 +0500
+
+    enable filament panel access
+
+[33mcommit d4bdabfbd4bc8545fc00bb17d654cc766df6f639[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 01:04:23 2026 +0500
+
+    rebuild with dev packages
+
+[33mcommit fdf5456781e0936065a054ab449541fc053b7b35[m
+Author: Sukhrob <suhrobik@gmail.com>
+Date:   Fri Feb 13 00:43:16 2026 +0500
+
+    Clear all configurations in .env file
+    
+    Removed all environment variable settings from .env file.
+
+[33mcommit e76305fa8ae83a3ef7490f36d595167ed0d9a8c8[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 00:20:06 2026 +0500
+
+    rebuild with dev packages
+
+[33mcommit 2ea70aa38a78b9242a4c2c523915bd294c58a984[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 00:12:55 2026 +0500
+
+    rebuild with dev
+
+[33mcommit fa5d2cde268265c47169e7ecd99c5b2aa04c5804[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Fri Feb 13 00:09:36 2026 +0500
+
+    force https in production
+
+[33mcommit 3b0cc3cc0ce44c03e607569f80d0980c60250479[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:57:42 2026 +0500
+
+    add vite build
+
+[33mcommit 63fecbbd595ac2e48d0f53c98b597fe578ee5b5c[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:56:41 2026 +0500
+
+    fix database config for heroku
+
+[33mcommit db0868596f1f4dd6cb5e327edb77ed0669bf0ed1[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:38:42 2026 +0500
+
+    enable DATABASE_URL support
+
+[33mcommit 000a7a648366db75d12a8417766c25869d260acc[m
+Author: Sukhrob <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:24:42 2026 +0500
+
+    Fix Procfile formatting for web process
+
+[33mcommit f91ff776bbe8d8561d8acdaaced4f90884eb65e3[m
+Author: Sukhrob <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:12:59 2026 +0500
+
+    Update APP_KEY in .env file
+
+[33mcommit 465c47546948e7e32ee113678c878edfcfd9404d[m
+Author: Sukhrob <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:11:25 2026 +0500
+
+    Add APP_KEY to .env file
+    
+    Set APP_KEY for local environment configuration.
+
+[33mcommit 122481cc7d55bf652309f7761bcc20cc7b1652ff[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 23:05:18 2026 +0500
+
+    add procfile
+
+[33mcommit f08cbf621f367c563ff1a0b895c6e7e944d6f28d[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 22:17:43 2026 +0500
+
+    add Procfile
+
+[33mcommit abd4dcacdc3eeed7ecade9798c59f9752820ed57[m
+Author: Suhrobjan <suhrobik@gmail.com>
+Date:   Thu Feb 12 21:55:14 2026 +0500
+
+    first commit
