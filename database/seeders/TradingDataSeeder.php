@@ -33,6 +33,7 @@ class TradingDataSeeder extends Seeder
 
     private function seedDailyResults(): void
     {
+        DailyTradeResult::query()->delete();
         $commodities = ['Хлопок-волокно', 'Пшеница', 'Кукуруза', 'Медь', 'Нефть', 'Рис'];
         for ($i = 0; $i < 30; $i++) {
             DailyTradeResult::updateOrCreate(
