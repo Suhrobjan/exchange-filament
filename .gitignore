@@ -19,6 +19,7 @@ app/Console/
 /storage/*.key
 /storage/pail
 /vendor
+bootstrap/cache/config.php
 Homestead.json
 Homestead.yaml
 Thumbs.db
